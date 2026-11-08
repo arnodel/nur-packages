@@ -9,22 +9,22 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    x86_64-linux = "1jhwi56hz9w8yvmj5vrmy0phckwczxblwb8vyfvmvykj4nnq7and";
-    aarch64-linux = "0x91l9z619c207yn4ijrq8nxk3sm2ibnnpm9xl63fxpp8k76cjz1";
-    x86_64-darwin = "0d4jw545kmrawsf5y8lqmgb5d60yhlcphj7iynixyrcl32p188vz";
-    aarch64-darwin = "0njn0aygdhfrzrmp856i103mj3r8da9y0bws0g3q3sgmmqisrppz";
+    x86_64-linux = "02qx6klcfvj402p8phii60swsjxss9ij28akik72x9vlmpz3rb0z";
+    aarch64-linux = "0rfpc3a03myc8l8s3wgn537d74hz05b8cl218mivjaflajdkcl43";
+    x86_64-darwin = "125k4q04vpafsmsqw6g68v601kfcvk11sy4ppkkjjayqkmiqz2lq";
+    aarch64-darwin = "1xsyja4vpk9zn04gr9isxdnlwd1rds2anaz5h1924z676s6xrg1v";
   };
 
   urlMap = {
-    x86_64-linux = "https://github.com/arnodel/jsonstream/releases/download/v0.3.2/jsonstream_0.3.2_linux_amd64.tar.gz";
-    aarch64-linux = "https://github.com/arnodel/jsonstream/releases/download/v0.3.2/jsonstream_0.3.2_linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/arnodel/jsonstream/releases/download/v0.3.2/jsonstream_0.3.2_macOS_amd64.tar.gz";
-    aarch64-darwin = "https://github.com/arnodel/jsonstream/releases/download/v0.3.2/jsonstream_0.3.2_macOS_arm64.tar.gz";
+    x86_64-linux = "https://github.com/arnodel/jsonstream/releases/download/v0.3.3/jsonstream_0.3.3_linux_amd64.tar.gz";
+    aarch64-linux = "https://github.com/arnodel/jsonstream/releases/download/v0.3.3/jsonstream_0.3.3_linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/arnodel/jsonstream/releases/download/v0.3.3/jsonstream_0.3.3_macOS_amd64.tar.gz";
+    aarch64-darwin = "https://github.com/arnodel/jsonstream/releases/download/v0.3.3/jsonstream_0.3.3_macOS_arm64.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "pj";
-  version = "0.3.2";
+  version = "0.3.3";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
